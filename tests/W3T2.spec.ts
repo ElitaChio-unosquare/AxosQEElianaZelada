@@ -1,0 +1,9 @@
+import { test, expect } from '@playwright/test';
+
+test('has title', async ({ page }) => {
+  await page.goto('https://Saucedemo.com/');
+  await expect(page.getByText('Swag Labs')).toBeVisible();
+  await page.locator('input[id="user-name"]').fill('standard_user');
+  await page.locator('input[id="password"]').fill('secret_sauce');
+  await page.locator('.submit-button.btn_action').click();
+  });
